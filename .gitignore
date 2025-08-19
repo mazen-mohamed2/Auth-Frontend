@@ -1,0 +1,24 @@
+# --- Node / React / Vite ---
+node_modules/
+dist/
+coverage/
+.eslintcache
+*.tsbuildinfo
+
+# --- Vite caches (sometimes created locally) ---
+.vite/
+vite.config.local.ts
+
+# --- Environment files (keep only examples) ---
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# --- OS / Editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
