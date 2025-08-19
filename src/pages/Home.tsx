@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { me, refresh, logout } from '../api/auth'
+import { me, refresh } from '../api/auth'
 import { useAuthStore } from '../store/auth'
 
 export default function Home() {
@@ -28,17 +28,11 @@ export default function Home() {
     bootstrap()
   }, [])
 
-  const doLogout = async () => {
-    const token = useAuthStore.getState().accessToken
-    if (token) await logout(token)
-    clear()
-    setMessage('Logged out.')
-  }
+
 
   return (
     <div className="space-y-4">
       <h2 className="text-2xl font-semibold">{message}</h2>
-      <button onClick={doLogout} className="px-4 py-2 rounded-xl border border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">Logout</button>
     </div>
   )
 }
